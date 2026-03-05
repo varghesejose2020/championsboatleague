@@ -3,283 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Champions Boat League 2025</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fc;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: row;
-            gap: 30px;
-            padding-top: 30px;
-        }
-
-        .table-container {
-            width: 45%;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-top: 120px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        th {
-            background-color: #2c3e50;
-            color: white;
-            padding: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        td {
-            padding: 12px;
-            border: 1px solid #dcdcdc;
-            background-color: #f9f9f9;
-            vertical-align: middle;
-        }
-
-        tbody tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        .completed {
-            color: green;
-            font-weight: bold;
-        }
-
-        .upcoming {
-            color: red;
-            font-weight: bold;
-        }
-
-        .InProgress {
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .postponed {
-            color: orange;
-            font-weight: bold;
-        }
-
-        tbody tr:nth-child(even) td {
-            background-color: #f3f3f3;
-        }
-
-        tbody tr:nth-child(odd) td {
-            background-color: #ffffff;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .table-container {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-
-            table {
-                font-size: 14px;
-            }
-        }
-
-        .position-icon {
-            font-size: 1em;
-            padding-right: 5px;
-        }
-
-        .gold {
-            color: #03045e;
-        }
-
-        .silver {
-            color: #5f0f40;
-        }
-
-        .bronze {
-            color: #ff0054;
-        }
-
-        .placeholder {
-            color: gray;
-            font-style: italic;
-        }
-
-        .icon-container {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            padding-top: 20px;
-        }
-
-        .cbl-icon {
-            width: 150px;
-            height: auto;
-        }
-    </style>
+    <meta name="description" content="Official schedule and points table for the Champions Boat League 2025.">
+    <title>Champions Boat League 2025 | Official Site</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <!-- Animated Ocean Wave Background (CSS Only) for depth -->
+    <div class="background-overlay"></div>
 
-    <!-- CBL Icon -->
-    <div class="icon-container">
-        <img src="https://www.keralatourism.org/assets/img/cbl/icons/icon-cbl.svg" alt="CBL Icon" class="cbl-icon">
-    </div>
+    <header class="hero-section">
+        <div class="logo-container">
+            <img src="https://www.keralatourism.org/assets/img/cbl/icons/icon-cbl.svg" alt="CBL Icon" class="cbl-logo">
+            <div class="glow-effect"></div>
+        </div>
+        <h1 class="hero-title">Champions Boat League 2025</h1>
+        <p class="hero-subtitle">The Thrill of the Backwaters</p>
+    </header>
 
-    <!-- Schedule Table -->
-    <div class="table-container">
-        <h1>Champions Boat League 2025 Schedule</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Venue</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Winner (1st, 2nd, 3rd)</th>
-                </tr>
-            </thead>
-            <tbody id="schedule-body">
-                <!-- Schedule data inserted by JavaScript -->
-            </tbody>
-        </table>
-    </div>
+    <main class="main-content">
+        <!-- Schedule Table -->
+        <section class="table-section fade-in-section">
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2>Match Schedule</h2>
+                    <div class="ornament-line"></div>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Venue</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Winner (1st, 2nd, 3rd)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedule-body">
+                            <!-- Schedule data inserted by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-    <!-- Points Table -->
-    <div class="table-container">
-        <h1>Champions Boat League 2025 Points Table</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Boat Club</th>
-                    <th>Team Name</th>
-                    <th>Boat Name</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody id="points-table-body">
-                <!-- Points data inserted by JavaScript -->
-            </tbody>
-        </table>
-    </div>
+        <!-- Points Table -->
+        <section class="table-section fade-in-section delay-1">
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2>Points Table</h2>
+                    <div class="ornament-line"></div>
+                </div>
+                <div class="table-responsive">
+                    <table class="data-table points-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Boat Club</th>
+                                <th>Team Name</th>
+                                <th>Boat Name</th>
+                                <th>Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="points-table-body">
+                            <!-- Points data inserted by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <script>
-        const matches = [
-            { venue: 'Kainakari, Alappuzha', date: '19-09-2025', startTime: '14:30', endTime: '19:00', winners: ['Veeyapuram(Village Boat Club, Kainakary )', 'Melpadam(Pallathuruthi Boat Club, Alappuzha )', 'Niranam(Niranam Boat Club)'] },
-            { venue: 'Thazhathangadi, Kottayam', date: '27-09-2025', startTime: '14:30', endTime: '17:00', winners: ['Veeyapuram(Village Boat Club, Kainakary )', 'Melpadam(Pallathuruthi Boat Club, Alappuzha )','Nadubhagam(Punnamada Boat Club)'] },
-            { venue: 'Dharmadom, Kannur', date: '02-10-2025', startTime: '14:30', endTime: '19:00', winners: [], isSnakeboatRace: false },
-            { venue: 'Piravom, Ernakulam', date: '04-10-2025', startTime: '14:30', endTime: '17:00', winners: [ 'Veeyapuram(Village Boat Club, Kainakary )', 'Melpadam(Pallathuruthi Boat Club, Alappuzha )','Nadubhagam(Punnamada Boat Club)']  },
-            { venue: 'Beypore, Kozhikode', date: '12-10-2025', startTime: '14:30', endTime: '17:00', winners: [], isSnakeboatRace: false },
-            { venue: 'Marine Drive, Ernakulam', date: '17-10-2025', startTime: '14:30', endTime: '17:00', winners: [], isSnakeboatRace: true ,isPostponed: true},
-            { venue: 'Cheruvathoor, Kasaragod', date: '19-10-2025', startTime: '14:30', endTime: '19:00', winners: [], isSnakeboatRace: false },
-            { venue: 'Kottappuram, Thrissur', date: '25-10-2025', startTime: '14:30', endTime: '19:00', winners: ['Veeyapuram(Village Boat Club, Kainakary )','Nadubhagam(Punnamada Boat Club)','Melpadam(Pallathuruthi Boat Club, Alappuzha )'] },
-            { venue: 'Pulinkunnu, Alappuzha', date: '01-11-2025', startTime: '14:30', endTime: '17:45',  winners: ['Veeyapuram(Village Boat Club, Kainakary )', 'Melpadam(Pallathuruthi Boat Club, Alappuzha )', 'Niranam(Niranam Boat Club)']},
-            { venue: 'Karuvatta, Alappuzha', date: '08-11-2025', startTime: '14:30', endTime: '17:00', winners:['Veeyapuram(Village Boat Club, Kainakary )', 'Melpadam(Pallathuruthi Boat Club, Alappuzha )','Nadubhagam(Punnamada Boat Club)'] },
-            { venue: 'Pandanad, Chengannur, Alappuzha', date: '15-11-2025', startTime: '14:30', endTime: '16:57', winners: ['Veeyapuram(Village Boat Club, Kainakary )', 'Niranam(Niranam Boat Club)','Melpadam(Pallathuruthi Boat Club, Alappuzha )' ]},
-            { venue: 'Kayamkulam, Alappuzha', date: '22-11-2025', startTime: '14:30', endTime: '19:00', winners: ['Veeyapuram(Village Boat Club, Kainakary )', 'Naduvileparamban(Emmanuael Boat Club)','Niranam(Niranam Boat Club)' ] },
-            { venue: 'Kallada, Kollam', date: '29-11-2025', startTime: '14:30', endTime: '19:00', winners: ['Veeyapuram(Village Boat Club, Kainakary )', 'Melpadam(Pallathuruthi Boat Club, Alappuzha )', 'Niranam(Niranam Boat Club)'] },
-            { venue: "President's Trophy, Kollam", date: '06-12-2025', startTime: '14:30', endTime: '19:00', winners: [], isSnakeboatRace: true ,isPostponed: true }
-        ];
+    <footer class="site-footer">
+        <p>&copy; 2025 Champions Boat League. All rights reserved.</p>
+    </footer>
 
-        const boatClubs = [
-            { club: 'Village Boat Club, Kainakary', team: 'Pride Chasers', boat: 'Veeyapuram', points: 80 },
-            { club: 'Pallathuruthi Boat Club, Alappuzha', team: 'Tropical Titans', boat: 'Melpadam', points: 68 },
-            { club: 'Niranam Boat Club', team: 'Backwater Kings', boat: 'Niranam', points: 58 },
-            { club: 'Punnamada Boat Club', team: 'Ripple Breakers', boat: 'Nadubhagam', points: 60 },
-            { club: 'Emmanuael Boat Club', team: 'Chundan Warriers', boat: 'Naduvileparamban', points: 54 },
-            { club: 'Kumarakam Town Boat Club', team: 'Backwater Warriors', boat: 'Payippadan', points: 31 },
-            { club: 'Thekkekara Boat Club, Mankombu', team: 'BackWater Chargers', boat: 'Cheruthana', points: 32 },
-            { club: 'Karichal Chundan Boat Club', team: 'Thunder Oars', boat: 'Karichal', points: 33 },
-            { club: 'Changanaserry Boat Club', team: 'Wave Gliders', boat: 'Champakulam', points: 16 }
-        ];
-
-        // Check match status including postponements
-        function checkMatchStatus(matchDate, startTime, endTime, isPostponed) {
-            const today = new Date();
-            const [day, month, year] = matchDate.split('-');
-            const matchDateObj = new Date(`${month}-${day}-${year}`);
-            const startDateTime = new Date(`${month}-${day}-${year} ${startTime}`);
-            const endDateTime = new Date(`${month}-${day}-${year} ${endTime}`);
-
-            if (isPostponed) return 'Postponed';
-            if (today >= endDateTime) return 'Completed';
-            if (today >= startDateTime) return 'In Progress';
-            return 'Upcoming';
-        }
-
-        // Display the schedule table
-        function displaySchedule() {
-            const scheduleBody = document.getElementById('schedule-body');
-            matches.forEach(match => {
-                const status = checkMatchStatus(match.date, match.startTime, match.endTime, match.isPostponed);
-                const statusClass = status === 'Completed' ? 'completed' : (status === 'In Progress' ? 'InProgress' : (status === 'Postponed' ? 'postponed' : 'upcoming'));
-
-                let winnersDisplay = '';
-                if (match.isPostponed) {
-                    winnersDisplay = `<span class="placeholder">TBA (Postponed)</span>`;  // No winners if match is postponed
-                } else if (match.isSnakeboatRace === false) {
-                    winnersDisplay = `<span class="placeholder">Not for Snakeboats</span>`;
-                } else if (status === 'Completed') {
-                    winnersDisplay = `
-                        <span class="position-icon gold">🏅 1st: ${match.winners[0]}</span><br>
-                        <span class="position-icon silver">🥈 2nd: ${match.winners[1]}</span><br>
-                        <span class="position-icon bronze">🥉 3rd: ${match.winners[2]}</span>
-                    `;
-                } else {
-                    winnersDisplay = `<span class="placeholder">TBA</span>`; // Winners will be TBA for upcoming matches
-                }
-
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${match.venue}</td>
-                    <td>${match.date}</td>
-                    <td class="${statusClass}">${status}</td>
-                    <td>${winnersDisplay}</td>
-                `;
-                scheduleBody.appendChild(row);
-            });
-        }
-
-        // Display the points table
-        function displayPointsTable() {
-            const pointsTableBody = document.getElementById('points-table-body');
-            const sortedClubs = boatClubs.sort((a, b) => b.points - a.points);
-            sortedClubs.forEach(club => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${club.club}</td>
-                    <td>${club.team}</td>
-                    <td>${club.boat}</td>
-                    <td>${club.points}</td>
-                `;
-                pointsTableBody.appendChild(row);
-            });
-        }
-
-        // Initialize the display
-        displaySchedule();
-        displayPointsTable();
-    </script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
 </body>
 </html>
